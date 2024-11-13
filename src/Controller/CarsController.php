@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-use App\Repository\CarsRepository;
+use App\Repository\CarRepository;
 
 class CarsController extends AbstractController
 {
@@ -17,7 +17,7 @@ class CarsController extends AbstractController
         $cars = $carRepository->findAll();
 
         return $this->render('cars/index.html.twig', [
-            'controller_name' => 'CarsController',
+            'cars' => $cars,
         ]);
     }
 }
