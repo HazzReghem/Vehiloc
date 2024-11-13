@@ -18,22 +18,34 @@
         {# HEADER #}
         <header>
             <nav>
-                <a href="index.html"><img src="assets/img/logo.png" alt="Vehicloc" /></a>
-                <a href="add.html" class="btn-nav">Ajouter une voiture</a>
+                <a href="{{ path('app_home') }}"><img src="{{ asset('assets/img/logo.png') }}" alt="Vehicloc" /></a>
+                <a href="#" class="btn-nav">Ajouter une voiture</a>
             </nav>
-            <div class="flex-header">
-                <div>
-                    <h1>Location de voitures à Saint-Étienne</h1>
-                    <p>Un service de location de voitures au mois pour répondre à vos besoins de mobilité.</p>
-                </div>
-                <div>
-                    <img src="assets/img/car.png" alt="Voiture">
-                </div>
-            </div>
+
+            {% block header %}{% endblock %}
+            
         </header>
 
         {% block body %}{% endblock %}
 
-
+        {# FOOTER #}
+        <footer>
+            <h2>Conduire avec nous</h2>
+            <nav>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Nous contacter</a></li>
+                    <li>
+                        <a href="#"><img src="{{ asset('assets/icons/instagram.png') }}" alt="Instagram" /></a>
+                        <a href="#"><img src="{{ asset('assets/icons/facebook.png') }}" alt="Facebook" /></a>
+                    </li>
+                </ul>
+                <ul>
+                    <li><a href="#">Données personnelles</a></li>
+                    <li><a href="#">Questions fréquentes</a></li>
+                    <li class="copyright">© Véhicloc 2023</li>
+                </ul>
+            </nav>
+        </footer>
     </body>
 </html>
