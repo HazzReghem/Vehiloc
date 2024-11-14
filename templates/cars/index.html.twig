@@ -27,7 +27,14 @@
                             <p>ou similaire | Saint-Étienne</p>
                         </a>
                         <div>
-                            <a href="#"><img src="{{ asset('assets/icons/trash.png') }}" alt="Supprimer" /></a>
+                            <a href="#" onclick="document.getElementById('delete-form-{{ car.id }}').submit();">
+                                <img src="{{ asset('assets/icons/trash.png') }}" alt="Supprimer" />
+                            </a>
+
+                            <form id="delete-form-{{ car.id }}" method="post" action="{{ path('app_car_delete', {id: car.id}) }}" style="display: none;">
+                                <input type="hidden" name="_method" value="POST">
+                            </form>
+                            {# <a href="{{ path('app_car_delete' , {id: car.id}) }}"><img src="{{ asset('assets/icons/trash.png') }}" alt="Supprimer" /></a> #}
                         </div>
                     </div>
                     <div class="mini-car-icons">
